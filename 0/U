@@ -34,13 +34,20 @@ boundaryField
 
     PLANE      
     {
-        type            testFixedValue;
-        refValue        uniform (0 0 1);
-        value           uniform (0 0 1);
-        offset          (0 0 0);
-        amplitude       2.5E-3;
-        frequency       0.08;
+
+      type         uniformFixedValue;
+      uniformValue
+      {
+          type             sine;
+          frequency        0.08;
+          amplitude        0.025;
+          scale            (0 0 1);  // Scale factor for wave
+          level            (0 0 0);  // Offset
+      }
     }
+
+
+
 
     LEFT      
     {
